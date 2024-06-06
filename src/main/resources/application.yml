@@ -1,0 +1,31 @@
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/usertest
+    username: usertest
+    password: usertest
+    hikari:
+      schema: testschema
+      connection-init-sql: CREATE SCHEMA IF NOT EXISTS testschema
+    driverClassName: org.postgresql.Driver
+
+jwt:
+  token:
+    secret: QWGoEVOgwBZZ/gYk9n9X/b3pU4Z5hI2UbP0apzZGWi3vs+t2PxHIO8kJCEHU9YiP0fM7sSXc4e+fmQ6+Zon/cQ==
+    expired: 360000
+
+springdoc:
+  swagger-ui:
+    path: /sw-ui
+  api-docs:
+    path: /sw
